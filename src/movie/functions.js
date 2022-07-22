@@ -55,4 +55,4 @@ exports.deleteMovie = async (yargObj) => {
     } catch (error) {
         console.log(error);
     }
-} //use node src/app --delete --title""
+}; //use node src/app --delete --title""

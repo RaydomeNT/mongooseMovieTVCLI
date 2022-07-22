@@ -1,8 +1,8 @@
 require("./db/connections");
 const yargs = require("yargs");
 const mongoose = require("mongoose");
-const { createMovie, readMovie, listMovie, bulkMovie, updateMovie, deleteMovie } = require("./movie/functions")
-const { createTV, readTV, listTV, updateTV, deleteTV } = require("./tv/functions")
+const { createMovie, readMovie, listMovie, bulkMovie, updateMovie, deleteMovie } = require("./movie/functions");
+const { createTV, readTV, listTV, updateTV, deleteTV } = require("./tv/functions");
 
 const app = async (yargsObj) => {
   try {
@@ -20,7 +20,7 @@ const app = async (yargsObj) => {
     //lists movies from a specified year
 
   } else if (yargsObj.bulk) {
-    await bulkMovie({ title: yargsObj.title, actor: yargsObj.actor, year: yargsObj.year })
+    await bulkMovie({ title: yargsObj.title, actor: yargsObj.actor, year: yargsObj.year });
     //search for an actor and return a list of movies they are in
   
   } else if (yargsObj.update) {
@@ -38,7 +38,7 @@ const app = async (yargsObj) => {
 
   } else if (yargsObj.readTV) {
     await readTV({ title: yargsObj.title, studio: yargsObj.studio, series: yargsObj.series });
-    //search for a show by title
+    //search for a TV show by title
 
   } else if (yargsObj.listTV) {
     await listTV({ title: yargsObj.title, studio: yargsObj.studio, series: yargsObj.series });
